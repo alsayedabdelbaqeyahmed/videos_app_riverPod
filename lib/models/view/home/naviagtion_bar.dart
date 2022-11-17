@@ -64,9 +64,9 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
            * consumer is used to rebuild tha Stack widget every time
            * the user chose the video
            */
-          final selectedVideo = watch(selectedVideoProvider).state;
+          final selectedVideo = watch.watch(selectedVideoProvider);
           final miniVideoPlayerController =
-              watch(miniVideoPlayerControllerProvider).state;
+              watch.watch(miniVideoPlayerControllerProvider);
 
           return Stack(
             children: screens!
@@ -111,8 +111,8 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
                                   video: selectedVideo,
                                   size: constrain,
                                   isMiniPlayer: true,
-                                  press: () => context
-                                      .read(selectedVideoProvider)
+                                  press: () => watch
+                                      .read(selectedVideoProvider.notifier)
                                       .state = null,
                                   minihight: constrain.maxHeight * 0.1 - 0.4,
                                 ),

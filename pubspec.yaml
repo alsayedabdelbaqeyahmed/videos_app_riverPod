@@ -30,8 +30,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  bloc:
-  flutter_bloc:
   flutter_svg:
   intl:
   youtube_player_flutter:
@@ -39,12 +37,15 @@ dependencies:
   shared_preferences:
   miniplayer:
   timeago:
-  flutter_riverpod: ^2.1.1
+  flutter_riverpod:
+  riverpod_annotation:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
 
 dev_dependencies:
+  build_runner:
+  riverpod_generator: ^1.0.4
   flutter_test:
     sdk: flutter
 
