@@ -1,0 +1,31 @@
+class AppStringConstants {
+  static const String url = 'url';
+  static const String width = 'width';
+  static const String hight = 'hight';
+  static const String defaultThumbnails = 'default';
+  // static const String heightThumbnails = 'heightThumbnails';
+  static const String meduim = 'meduim';
+  static const String channelId = 'channelId';
+  static const String channelTitle = 'channelTitle';
+  static const String description = 'description';
+  static const String liveBroadcastContent = 'liveBroadcastContent';
+  static const String publishTime = 'publishTime';
+  static const String publishedAt = 'publishedAt';
+  static const String title = 'title';
+  static const String thumbnails = 'thumbnails';
+  static const String videoId = 'videoId';
+  static const String kind = 'kind';
+  static const String etag = 'etag';
+  static const String id = 'id';
+  static const String snippet = 'snippet';
+  static const String totalResults = 'totalResults';
+  static const String resultsPerPage = 'resultsPerPage';
+  static const String nextPageToken = 'nextPageToken';
+  static const String regionCode = 'regionCode';
+  static const String pageInfo = 'pageInfo';
+  static const String items = 'items';
+  static const String viewCount = 'viewCount';
+  static const String likeCount = 'likeCount';
+  static const String favoriteCount = 'favoriteCount';
+  static const String commentCount = 'commentCount';
+}
