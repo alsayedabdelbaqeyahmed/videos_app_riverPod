@@ -3,7 +3,6 @@ class AppStringConstants {
   static const String width = 'width';
   static const String hight = 'hight';
   static const String defaultThumbnails = 'default';
-  // static const String heightThumbnails = 'heightThumbnails';
   static const String meduim = 'meduim';
   static const String channelId = 'channelId';
   static const String channelTitle = 'channelTitle';
@@ -18,6 +17,7 @@ class AppStringConstants {
   static const String etag = 'etag';
   static const String id = 'id';
   static const String snippet = 'snippet';
+  static const String statistics = 'statistics';
   static const String totalResults = 'totalResults';
   static const String resultsPerPage = 'resultsPerPage';
   static const String nextPageToken = 'nextPageToken';

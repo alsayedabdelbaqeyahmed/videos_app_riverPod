@@ -1,7 +1,8 @@
 import 'package:video_payer/models/constants/string_constant.dart';
 
-class StatisticsModel {
-  StatisticsModel({
+/// statics of every selected video
+class VideoStatisticsModel {
+  VideoStatisticsModel({
     this.viewCount,
     this.likeCount,
     this.favoriteCount,
@@ -13,8 +14,8 @@ class StatisticsModel {
   String? favoriteCount;
   String? commentCount;
 
-  factory StatisticsModel.fromJson(Map<String, dynamic> json) =>
-      StatisticsModel(
+  factory VideoStatisticsModel.fromJson(Map<String, dynamic> json) =>
+      VideoStatisticsModel(
         viewCount: json[AppStringConstants.viewCount],
         likeCount: json[AppStringConstants.likeCount],
         favoriteCount: json[AppStringConstants.favoriteCount],
