@@ -10,15 +10,28 @@ import 'package:video_payer/models/data_models/video_statics_model.dart';
 import 'package:video_payer/models/data_models/youtube_channel_model.dart';
 
 class HttpHelper {
+  void onInit() async {
+    await search();
+  }
+
   /// search function to search about videos
   Future<SearchVideoModel> search(
       {String? searchPageToken, String? searchItem}) async {
     SearchVideoModel? searchResult;
+    String? searchUrl;
     // search url and remove all spaces from search q at api
-    String? qWithoutSpaces = searchItem!.replaceAll(RegExp(r" "), "");
 
-    final searchUrl =
-        "${ApiConstants.baseApi}/youtube/v3/search?part=snippet&maxResults=1000&pageToken=$searchPageToken&q=$qWithoutSpaces&key=${ApiConstants.apiKey}&order=date&type=videos";
+    if (searchPageToken == null &&
+        searchItem == null &&
+        searchPageToken == "") {
+      searchUrl =
+          "${ApiConstants.baseApi}/youtube/v3/search?part=snippet&maxResults=1000&order=date&key=${ApiConstants.apiKey}";
+    } else {
+      String? qWithoutSpaces = searchItem!.replaceAll(RegExp(r" "), "");
+      searchUrl =
+          "${ApiConstants.baseApi}/youtube/v3/search?part=snippet&maxResults=1000&pageToken=$searchPageToken&q=$qWithoutSpaces&key=${ApiConstants.apiKey}&order=date&type=videos";
+    }
+
     final client = http.Client();
     final responce = await client.get(
       Uri.https(searchUrl),
@@ -38,6 +51,7 @@ class HttpHelper {
       } else {
         Future.error(responce.statusCode);
       }
+      // print(searchResult!.items);
       return searchResult!;
     } catch (e) {
       Future.error(responce.statusCode);
@@ -73,6 +87,7 @@ class HttpHelper {
       } else {
         Future.error(responce.statusCode);
       }
+      // print(channelResult!.statisticsModel!.favoriteCount);
       return channelResult!;
     } catch (e) {
       Future.error(responce.statusCode);
@@ -110,6 +125,7 @@ class HttpHelper {
       } else {
         Future.error(responce.statusCode);
       }
+      //print(videosResult!.commentCount);
       return videosResult!;
     } catch (e) {
       Future.error(responce.statusCode);

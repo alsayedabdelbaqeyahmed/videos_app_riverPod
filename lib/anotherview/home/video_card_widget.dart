@@ -19,14 +19,12 @@ class VideoCardWidget extends StatelessWidget {
     return Consumer(builder: (context, ref, _) {
       return GestureDetector(
         onTap: () {
-          
           ref.read(selectedVideoProvider.notifier).state = video;
           ref
               .read(miniVideoPlayerControllerProvider.notifier)
               .state
               .animateToHeight(state: PanelState.MAX);
-        
-         
+
           // context
           //     .read(miniVideoPlayerControllerProvider)
           //     .state

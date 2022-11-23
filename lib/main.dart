@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:video_payer/models/http_helper/http_helper.dart';
 import 'package:video_payer/models/view/home/naviagtion_bar.dart';
 
-void main() {
+void main() async {
+  HttpHelper().onInit();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: Colors.white,
         ),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: const NavigationBarScreen(),
     );
